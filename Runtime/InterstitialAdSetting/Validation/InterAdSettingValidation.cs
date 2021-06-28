@@ -23,9 +23,7 @@ namespace RealbizGames.Settings
 
         public void Execute(IAsynChainResult data)
         {
-#if UNITY_EDITOR
             UnityEngine.Debug.LogFormat("{0} - Execute", TAG);
-#endif
 
             List<InterAdSettingDTO> dtos = service.GetAll();
 
@@ -36,9 +34,7 @@ namespace RealbizGames.Settings
 
             _result = new InterAdSettingValidationResult(success: true);
 
-#if UNITY_EDITOR
             UnityEngine.Debug.LogFormat("{0} - End", TAG);
-#endif
         }
 
         public static string ToStringForList<T>(List<T> l)

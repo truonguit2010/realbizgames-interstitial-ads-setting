@@ -32,5 +32,10 @@ namespace RealbizGames.Settings
             }
             return ok;
         }
+
+        public void Update(float restrictSeconds)
+        {
+            _restrictSeconds = restrictSeconds;
+        }
     }
 }

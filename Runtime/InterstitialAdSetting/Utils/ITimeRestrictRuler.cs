@@ -5,6 +5,8 @@ namespace RealbizGames.Settings
     {
         void Init(float restrictSeconds);
 
+        void Update(float restrictSeconds);
+
         bool Validate(bool resetIfOK = true);
 
         void Reset();

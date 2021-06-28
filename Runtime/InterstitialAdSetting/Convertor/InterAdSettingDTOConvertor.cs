@@ -10,6 +10,7 @@ namespace RealbizGames.Settings
             dto.Id = entity.id;
             dto.Enable = entity.enable > 0;
             dto.RestrictSeconds = entity.restrictSeconds;
+            dto.ReloadIntervalSeconds = entity.reloadIntervalSeconds;
 
             return dto;
         }

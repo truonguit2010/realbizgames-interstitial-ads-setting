@@ -8,6 +8,11 @@ namespace RealbizGames.Settings
 
         private Dictionary<string, ITimeRestrictRuler> dict = new Dictionary<string, ITimeRestrictRuler>();
 
+        public bool Contains(string id)
+        {
+            return dict.ContainsKey(id);
+        }
+
         public void Delete(string id)
         {
             dict.Remove(id);
@@ -48,6 +53,19 @@ namespace RealbizGames.Settings
             if (dict.ContainsKey(id))
             {
                 dict[id].Reset();
+            }
+        }
+
+        public void Set(string id, float restrictSeconds)
+        {
+            if (!dict.ContainsKey(id))
+            {
+                dict[id] = new TimeRestrictRulerImpl();
+                dict[id].Init(restrictSeconds);
+            }
+            else
+            {
+                dict[id].Update(restrictSeconds: restrictSeconds);
             }
         }
 
